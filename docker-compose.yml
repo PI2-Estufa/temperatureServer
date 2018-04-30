@@ -1,0 +1,12 @@
+version: "2"
+services: 
+    rabbit:
+        image: rabbitmq:latest
+    temperature_server:
+        build: .
+        volumes: 
+            - .:/code
+        command: './start.sh'
+        depends_on:
+            - rabbit
+

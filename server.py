@@ -4,7 +4,7 @@ class TemperatureServer():
     name = 'temperature_server'
 
     @rpc
-    def receiveTemperature(self, temperature):
+    def receive_temperature(self, temperature):
         print(temperature)
 
         return True
