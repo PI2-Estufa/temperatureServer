@@ -1,11 +1,18 @@
-version: "2"
+version: "3.5"
 services: 
     rabbit:
         image: rabbitmq:latest
+        networks:
+          - greenhouse
     temperature_server:
         build: .
+        networks:
+          - greenhouse
         volumes: 
             - .:/code
         depends_on:
             - rabbit
 
+networks:
+  greenhouse:
+    name: greenhouse
