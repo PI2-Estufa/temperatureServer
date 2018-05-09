@@ -12,6 +12,7 @@ services:
             - .:/code
         depends_on:
             - rabbit
+        command: "./start.sh"
 
 networks:
   greenhouse:
