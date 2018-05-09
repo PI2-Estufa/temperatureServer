@@ -6,7 +6,12 @@ services:
         build: .
         volumes: 
             - .:/code
-        command: './start.sh'
+        environment:
+            - FLASK_APP=api.py
+            - FLASK_DEBUG=1
+        command: 'flask run -p 8000 -h 0.0.0.0'
+        ports:
+          - "8000:8000"
         depends_on:
             - rabbit
 

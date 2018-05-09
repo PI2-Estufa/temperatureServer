@@ -3,7 +3,7 @@ import random
 from nameko.standalone.rpc import ClusterRpcProxy
 
 temperature = 20
-config = {'AMQP_URI':'amqp://guest:guest@ec2-18-231-106-14.sa-east-1.compute.amazonaws.com:80"}
+config = {'AMQP_URI':'amqp://rabbit:5672'}
 
 with ClusterRpcProxy(config) as cluster_rpc:
 
