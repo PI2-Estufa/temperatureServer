@@ -3,11 +3,19 @@ services:
     rabbit:
         image: rabbitmq:latest
         networks:
-          - greenhouse
+            - greenhouse
+    postgres:
+        image: postgres:latest
+        networks:
+            - greenhouse
+        volumes:
+            - ./postgresql/data:/var/lib/postgresql/data
+        env_file:
+            - .env
     temperature_server:
         build: .
         networks:
-          - greenhouse
+            - greenhouse
         volumes: 
             - .:/code
         depends_on:
