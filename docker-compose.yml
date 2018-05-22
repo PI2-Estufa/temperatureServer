@@ -24,4 +24,5 @@ services:
 
 networks:
   greenhouse:
+    external: true
     name: greenhouse
