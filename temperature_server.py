@@ -14,5 +14,10 @@ class TemperatureServer():
 
     @rpc
     def receive_temperature(self, temperature):
+        t = Temperature()
+        t.value = temperature
+        t.unit = ('C')
+        db.session.add(t)
+        db.session.commit()
         self.publish(temperature)
         return temperature
