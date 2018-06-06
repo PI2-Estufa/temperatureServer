@@ -4,7 +4,7 @@ from kombu import Exchange, Queue
 import db
 from db import Temperature
 
-exchange = Exchange("main", "direct", durable=True)
+exchange = Exchange("temperature", "direct", durable=True)
 queue = Queue("temperature_queue", exchange=exchange)
 
 
