@@ -16,6 +16,8 @@ class TemperatureServer():
         try:
             db.session.add(t)
             db.session.commit()
-        except OperationalError:
+        except:
             db.session.rollback()
+        finally:
+            db.session.close()
         return temperature
