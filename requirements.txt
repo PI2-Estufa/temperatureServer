@@ -12,7 +12,7 @@ nameko==2.8.5
 path.py==11.0.1
 pbr==4.0.2
 psycopg2-binary==2.7.4
-PyYAML==3.12
+PyYAML==5.4
 requests==2.18.4
 six==1.11.0
 SQLAlchemy==1.2.7
